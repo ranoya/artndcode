@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Série Comportamentais</title>
+    <meta name="generator" content="artesanal" />
+    <meta name="description" content="Organização de composições generativas criadas por Guilherme Ranoya">
+    <meta name="author" content="Prof. Dr. Guilherme Ranoya">
+    <meta name="keywords" content="arte generativa, computação criativa, código criativo">
+    <meta property="og:url" content="https://www.ranoya.com/arte/SerieComportamentais">
+    <meta property="og:title" content="Série Comportamentais">
+    <meta property="og:description" content="Organização de composições generativas criadas por Guilherme Ranoya">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:site_name" content="ranoya.com">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image" content="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg" />
+    <meta property="og:image:secure_url" content="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg">
+    <link rel="image_src" type="image/jpg" href="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg" />
+
+    <link rel="icon" type="image/png" href="https://www.ranoya.com/Assets/coverimages/portfolio16.png">
+    <link rel="shortcut icon" href="https://www.ranoya.com/Assets/coverimages/portfolio57.png" />
+    <link rel="apple-touch-icon" href="https://www.ranoya.com/Assets/coverimages/portfolio57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.ranoya.com/Assets/coverimages/portfolio72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.ranoya.com/Assets/coverimages/portfolio114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.ranoya.com/Assets/coverimages/portfolio144.png" />
+
+    <link REL="stylesheet" type="text/css" href="../mostra.css">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#FFFFFF">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#FFFFFF">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+    
+
+</head>
+
+
+
+<body>
+    <a name="comportamentalis" class="indice">Comportamentais</a>
+    <nav id="indices"></nav>
+    <div id="series">
+        <p class="decoracao">ART/ANC/ODE</p>
+        <br>
+        <p class="torto">Séries</p>
+        <br><br>
+        <a id="com" href="../SerieComportamentais">Comportamentais</a><br>
+        <a id="aut" href="../SerieAutomatos">Autômatos</a><br>
+        <a id="per" href="../SeriePerformaticos">Performáticos</a><br>
+        <a id="sob" href="../Sobre">Sobre o catálogo</a><br>
+    </div>
+    <div id="profilephoto"></div>
+    <div id="profilename">GUILHERME RANOYA</div>
+    <div id="barcolor"></div>
+    <div id="barcolor2"></div>
+    <div id="botaonavegacao">
+        <a id="navplus" href="javascript:menu(250);">
+            <hr id="hamup">
+            </hr>
+            <hr id="hammed">
+            </hr>
+            <hr id="hambot">
+            </hr>
+        </a>
+    </div>
+    <div id="mobileadvise"><b>Aviso</b><br>O conteúdo deste documento pode ser muito pesado para um dispositivo mobile
+    </div>
+    <span class="bigwhitespace"></span>
+
+    <span class="bloco">
+        <h1>Série<br>Comportamentais</h1>
+        <p class="decoracao">ART/ANC/ODE</p>
+
+        <span class="smallwhitespace"></span>
+
+        <p class="masterdescricaoleft">A série Comportamentais é um conjunto de composições de arte generativa
+            exclusivamente
+            visuais, criadas para dar vida à materiais multimidiáticos. Estas peças, em sua grande maioria, foram
+            utilizadas em contextos e formatos muito diferentes uns dos outros, com identidades e
+            características gráficas muito variadas, e desta maneira, precisariam ser muito flexíveis para se encaixarem
+            adequadamente ao contexto.</p>
+
+        <p class="masterdescricaoright">Esta série tem como característica comum se tratarem de artefatos graficamente
+            resposivos ao
+            movimento e/ou ação do mouse. Optou-se, como nas demais séries, o uso do alto contraste (preto e
+            branco) para que
+            pudessem ser aplicadas sobre a matiz própria do material em que seriam inseridas, independente de quais
+            fossem as combinações cromáticas utilizadas nele.</p>
+
+    </span>
+
+
+    <a name="iconmitp" class="indice">mitp</a>
+    <div id="dmitp" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import mitp from "../Pecas/mitp.js";
+
+          let mitpload = mitp({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'dmitp'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>mitp</b><br>2025</h2>
+        <p>Peça inspirada no design icônico do logotipo do MIT Press, projetado por Muriel Cooper, designer que também é responsável pela criação do MIT MediaLab, e de todo o ramo da arte com programação criativa que se desenvolveu à partir da linguagem Processing nos anos 2000.<br><br>
+        Ela explora o ritmo marcado e os diferentes pesos para cada traço, criando uma forte relação entre linhas pesadas e leves.</p>
+    </span>
+
+
+
+
+    <a name="iconVertigem" class="indice">Vertigem</a>
+    <div id="dVertigem" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import Vertigem from "../Pecas/vertigem.js";
+
+          let vert = Vertigem({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'dVertigem'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Vertigem</b><br>2024</h2>
+        <p>Esta peça faz referência um  <a target="_blank" href="https://cdn.booooooom.com/wp-content/uploads/2015/10/jaemin-lee17.jpg">poster modernista</a> da empresa alemã Braun,
+        criado com sequências de linhas em espaçamentos progressivos ao longo de
+        camadas uma embaixo da outra, proporcionando um efeito de movimento. Aqui, estas mesmas progressões são realizadas através de um campo
+        circular, girando em velocidades diferentes.<br><br>
+        Da mesma forma que Turbulence, esta peça também faz referência ao cartaz
+        de “Um corpo que cai” (Vertigo), de Saul Bass.</p>
+    </span>
+
+
+    <a name="iconbalaio" class="indice">Balaio</a>
+    <div id="dbalaio" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import balaio from "../Pecas/balaio.js";
+
+          let bala = balaio({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'dbalaio'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Balaio</b><br>2024</h2>
+        <p>
+        Peça com um teor um pouco mais narrativo, foi criada como parte
+        de uma apresentação, e buscava expressar, poeticamente, a possibildiade de sobreposição
+        de múltiplos pontos de vista sobre uma mesma questão. É por
+        este motivo que, em sua dinâmica (ao se clicar), a peça apresenta um
+        conjunto de elementos similares em planos diferentes, e com movimentos
+        distintos.
+        <br><br>
+        A peça também foi criada para que dialogasse graficamente com Pathwaves
+        e Meandros.
+      </p>
+
+    </span>
+
+
+
+
+
+    <a name="iconmequos" class="indice">Mequos</a>
+    <div id="dmequos" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import mequos from "../Pecas/mequos.js";
+
+          let meq = mequos({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'precision': 50,
+          'el': 'dmequos'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Mequos #1</b><br>2024</h2>
+        <p>Mequos foi a primeira obra explorando uma ortogonalidade mais rígida,
+        com ênfase nos quadrados, trabalhando com blocos de dimensões variáveis
+        e campos cartesianos aleatoriamente distorcidos, criando traçados
+        irregulares e alguns tropeços ao longo do caminho.</p>
+
+    </span>
+
+
+
+    <a name="iconcentricon" class="indice">Concentricon</a>
+    <div id="dconcentricon" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import concentricon from "../Pecas/concentricon.js";
+
+          let conc = concentricon({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'dconcentricon'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Concentricon</b><br>2019</h2>
+        <p>Peça composta por sequências de linhas em movimentos circulares
+        concêntricos, reforçando seu enquadramento também centralizado, girando
+        em velocidades e direções diferentes para cada um de seus elementos. Assim como algumas outras peças, sua resposta às ações de seus observadores lhe faz parecer uma criatura com vida própria.</p>
+
+    </span>
+
+
+    
+
+    <a name="blobis" class="indice">Blob</a>
+    <div id="dblobis" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import dblob from "../Pecas/theblob.js";
+
+        let playblob = dblob({
+        p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+        'el': 'dblobis'
+        });
+
+    </script>
+
+    <span class="bloco">
+        <h2><b>Blob</b><br>2019</h2>
+        <p>Assim como Concentricon, Blob também desenvolve, através de sequências
+        de linhas concentricas, algo que se assemelha a uma criatura com vida
+        e comportamento próprios. Nesta versão, com formas mais fluídas e orgânicas, que se deformam como uma água viva.</p>
+    </span>
+
+
+   
+
+    <a name="quadras" class="indice">Quadratura</a>
+    <div id="dquadras" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import quads from "../Pecas/quadra.js";
+
+        let playquads = quads({
+        p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+        'el': 'dquadras'
+        });
+
+    </script>
+
+    <span class="bloco">
+        <h2><b>Quadratura</b><br>2019</h2>
+        <p>Material utilizado para ilustrar um artigo científico publicado online. Trata-se de uma padronagem composta
+            por quadrados que se torcem em proporções diferentes conforme o movimento do mouse. A peça foi originalmente
+            aplicada com um contraste muito pequeno para não chamar atenção do observador, produzindo um efeito
+            surpresa sobre a mídia, uma vez que o objeto parecia ser apenas uma decoração de fundo; uma padronagem
+            estática repetida ao longo do
+            título do documento.</p>
+    </span>
+
+
+
+
+
+
+     <a name="orbitante" class="indice">Orbitalis</a>
+    <div id="dorbitantis" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import orbitais from "../Pecas/orbitais.js";
+
+        let orbis = orbitais({
+        p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+        'el': 'dorbitantis'
+        });
+
+    </script>
+
+    <span class="bloco">
+        <h2><b>Orbitalis</b><br>2018</h2>
+        <p>Peça criada na tentativa de reproduzir (ou se apropriar) de
+        efeitos interativos observados em outros lugares, através de movimentos
+        inerciais desenvolvidos por centenas de elementos aleatórios, provocando uma sensação de profundidade. Ela inaugura o uso de um enquadramento centralizado utilizado em muitas das outras obras nesta série.</p>
+    </span>
+
+
+
+
+    <a name="nervoso" class="indice">Nervos</a>
+    <div id="dnervos" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import nervu from "../Pecas/nervos.js";
+
+        let nervoso = nervu({
+        p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+        'el': 'dnervos'
+        });
+
+    </script>
+
+    <span class="bloco">
+        <h2><b>Nervos</b><br>2018</h2>
+        <p>Nervos foi criada para estampar a página inicial do website do autor. É uma peça tensa, construída explorando
+            a elasticidade das linhas junto com uma dificuldade de se manterem imóveis e estáveis. Mesmo com um pulso de
+            respiração que lhe dá certa organicidade, ela não produz qualquer sensação de relaxamento.</p>
+    </span>
+
+
+    <span class="bloco rodape">
+
+        <svg width="719" height="719" viewBox="0 0 1566 1566" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px; float: left; margin-bottom: 20px; vertical-align: top; margin-right: 10px;">
+<g id="ranoyalogo" clip-path="url(#clip0_1_2)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1566V1566H0V0ZM819.551 1233.25C861.767 1258.42 910.72 1271 966.41 1271C1023 1271 1072.4 1258.42 1114.61 1233.25C1156.83 1207.19 1189.62 1173.04 1212.97 1130.8C1236.32 1087.66 1248 1040.48 1248 989.254V311.177H1055.33V1012.17C1055.33 1028.35 1051.29 1043.18 1043.21 1056.66C1035.12 1070.14 1024.34 1080.92 1010.87 1089.01C997.398 1097.1 982.577 1101.14 966.41 1101.14C950.242 1101.14 935.421 1097.1 921.948 1089.01C909.373 1080.92 899.043 1070.14 890.959 1056.66C882.876 1043.18 878.834 1028.35 878.834 1012.17V576.746C878.834 524.621 867.157 477.438 843.803 435.199C820.45 392.959 787.665 359.258 745.449 334.094C703.233 308.031 653.831 295 597.243 295C541.554 295 492.601 308.031 450.385 334.094C408.169 359.258 375.384 392.959 352.03 435.199C328.677 477.438 317 524.621 317 576.746V1254.82H509.667V553.829C509.667 537.652 513.709 522.823 521.793 509.343C529.877 495.862 540.206 485.077 552.781 476.989C566.255 468.901 581.075 464.856 597.243 464.856C613.411 464.856 628.232 468.901 641.705 476.989C655.178 485.077 665.957 495.862 674.041 509.343C682.124 522.823 686.166 537.652 686.166 553.829V989.254C686.166 1040.48 697.843 1087.66 721.197 1130.8C744.55 1173.04 777.335 1207.19 819.551 1233.25Z"/>
+</g>
+<defs>
+<clipPath id="clip0_1_2">
+<rect width="1566" height="1566" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+        <h6>COPYRIGHT &copy; 2020, GUILHERME RANOYA</h6>
+
+
+
+    </span>
+
+<script src="../interface.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+  <head>
+    <title>Série Comportamentais</title>
+    <link rel="stylesheet" type="text/css" href="textos.css" />
+  </head>
+  <body
+    onresize="ajustaempty()"
+    onmouseover="ajustaempty()"
+    onclick="javascript:parent.postMessage('n','*')"
+  >
+    <div id="empty" style="height: 0"></div>
+    <div id="wrap">
+      <h1>A SÉRIE COMPORTAMENTAIS</h1>
+      <h2></h2>
+
+      <p>
+        Esta série é composta por um conjunto de obras que dependem da interação
+        com as pessoas para se desenvolverm. Precisarão ser clicadas, ou de
+        movimentos feitos com o mouse (ou o dedo nas telas de toque) para
+        reagir.
+      </p>
+
+      <p>
+        São chamadas de <b>comportamentias</b> pois tentam expressar
+        comportamentos como respostas aos estimulos da interação.
+      </p>
+
+      <p>
+        Assim como a <b>série autômatos</b>, mantém-se a opção pelo duotone, os
+        efeitos de moiré, e a restrição por expressões exclusivamente visuais,
+        sem utilização música ou recursos sonoros.
+      </p>
+    </div>
+  </body>
+
+  <script>
+    let c = "#000000";
+    let b = "#FFFFFF";
+
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    if (
+      typeof $_GET["fcolor"] != "undefined" &&
+      $_GET["fcolor"] != null &&
+      $_GET["fcolor"] != ""
+    ) {
+      c = "#" + $_GET["fcolor"];
+      document.querySelector(":root").style.setProperty("--cor-texto", c);
+    }
+
+    if (
+      typeof $_GET["bgcolor"] != "undefined" &&
+      $_GET["bgcolor"] != null &&
+      $_GET["bgcolor"] != ""
+    ) {
+      b = "#" + $_GET["bgcolor"];
+      document.querySelector(":root").style.setProperty("--cor-bg", b);
+    }
+
+    ajustaempty = function () {
+      let bloco = document.getElementById("wrap");
+      if (bloco.getBoundingClientRect().height < window.innerHeight - 150) {
+        console.log("true");
+        let diff =
+          (window.innerHeight - 150 - bloco.getBoundingClientRect().height) / 2;
+        document.getElementById("empty").style.height = diff + "px";
+      }
+    };
+
+    ajustaempty();
+
+    let hsl2hex = function (h, s, l) {
+      l /= 100;
+      const a = (s * Math.min(l, 1 - l)) / 100;
+      const f = (n) => {
+        const k = (n + h / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color)
+          .toString(16)
+          .padStart(2, "0"); // convert to Hex and prefix "0" if needed
+      };
+      return `#${f(0)}${f(8)}${f(4)}`;
+    };
+
+    let h = 0;
+
+    setInterval(function () {
+      document
+        .querySelector(":root")
+        .style.setProperty("--cor-var", hsl2hex(h, 46, 87));
+
+      h++;
+
+      if (h > 360) {
+        h = 0;
+      }
+    }, 10);
+  </script>
+</html>

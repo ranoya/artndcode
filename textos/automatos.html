@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+  <head>
+    <title>Série Autômatos</title>
+    <link rel="stylesheet" type="text/css" href="textos.css" />
+  </head>
+  <body
+    onresize="ajustaempty()"
+    onmouseover="ajustaempty()"
+    onclick="javascript:parent.postMessage('n','*')"
+  >
+    <div id="empty" style="height: 0"></div>
+    <div id="wrap">
+      <h1>A SÉRIE AUTÔMATOS</h1>
+      <h2></h2>
+
+      <p>
+        Autômatos são programas que operam sozinhos, sem a participação de um
+        sujeito ou usuário.
+      </p>
+
+      <p>
+        Esta série é composta por um conjunto de obras criadas para agirem por
+        conta própria, agindo e tomando decisões em relação ao seu próprio
+        contexto, ou sobre aquilo que acontece ao redor.
+      </p>
+
+      <p>
+        A maior parte dos autômatos faz uso extensivo da aleatoriedade, um traço
+        marcante na arte generativa desde seus primeiros experimentos. Este
+        elemento imprevisível garante que a expressão observada nunca mais se
+        repita, ainda que o seu aspecto permaneça sempre semelhante.
+      </p>
+
+      <p>
+        Além da opção pelo duotone, e os efeitos de moiré, esta série também se
+        restringe a expressões exclusivamente visuais, sem utilização música ou
+        recursos sonoros. Tratam-se de peças muitas vezes aproveitadas para
+        ilustrar materiais e documentos interativos, onde a sonorização poderia
+        provocar interferências adversas.
+      </p>
+    </div>
+  </body>
+
+  <script>
+    let c = "#000000";
+    let b = "#FFFFFF";
+
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    if (
+      typeof $_GET["fcolor"] != "undefined" &&
+      $_GET["fcolor"] != null &&
+      $_GET["fcolor"] != ""
+    ) {
+      c = "#" + $_GET["fcolor"];
+      document.querySelector(":root").style.setProperty("--cor-texto", c);
+    }
+
+    if (
+      typeof $_GET["bgcolor"] != "undefined" &&
+      $_GET["bgcolor"] != null &&
+      $_GET["bgcolor"] != ""
+    ) {
+      b = "#" + $_GET["bgcolor"];
+      document.querySelector(":root").style.setProperty("--cor-bg", b);
+    }
+
+    ajustaempty = function () {
+      let bloco = document.getElementById("wrap");
+      if (bloco.getBoundingClientRect().height < window.innerHeight - 150) {
+        console.log("true");
+        let diff =
+          (window.innerHeight - 150 - bloco.getBoundingClientRect().height) / 2;
+        document.getElementById("empty").style.height = diff + "px";
+      }
+    };
+
+    ajustaempty();
+
+    let hsl2hex = function (h, s, l) {
+      l /= 100;
+      const a = (s * Math.min(l, 1 - l)) / 100;
+      const f = (n) => {
+        const k = (n + h / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color)
+          .toString(16)
+          .padStart(2, "0"); // convert to Hex and prefix "0" if needed
+      };
+      return `#${f(0)}${f(8)}${f(4)}`;
+    };
+
+    let h = 0;
+
+    setInterval(function () {
+      document
+        .querySelector(":root")
+        .style.setProperty("--cor-var", hsl2hex(h, 46, 87));
+
+      h++;
+
+      if (h > 360) {
+        h = 0;
+      }
+    }, 10);
+  </script>
+</html>

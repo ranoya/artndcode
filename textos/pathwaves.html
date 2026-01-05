@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+  <head>
+    <title>Pathwaves</title>
+    <link rel="stylesheet" type="text/css" href="textos.css" />
+  </head>
+  <body
+    onresize="ajustaempty()"
+    onmouseover="ajustaempty()"
+    onclick="javascript:parent.postMessage('n','*')"
+  >
+    <div id="empty" style="height: 0"></div>
+    <div id="wrap">
+      <h1>PATHWAVES</h1>
+      <h2>2021</h2>
+
+      <p>
+        Pathwaves é - provavelmente - a peça mais icônica da produção
+        generativa.
+      </p>
+
+      <p>
+        Ela faz parte de uma estética deliberada e planejada, onde a visualidade
+        dos efeitos de moiré, e da opção pelo cromatismo duotone (duas cores),
+        já haviam se instituído como uma maneira própria de expressão visual.
+        Esta peça foi criada em um momento amadurecido na forma de lidar com a
+        arte, pensada de forma mais intencional, e menos experimental.
+      </p>
+
+      <p>
+        Na palestra “Serious Play” de 2008, a designer e artista gráfica Paula
+        Scher diferencia sua produção séria (transformadora, curiosa e cheia de
+        riscos) da produção austera (conhecida, dominada, bem delimitada). Nos
+        seus termos, podemos considerar Pathwaves como a passagem de uma
+        produção séria para uma produção austera.
+      </p>
+
+      <p>
+        Ela é parte da <b>série autômatos</b>, formada por construções que se
+        desenvolvem sozinhas, sem qualquer interação por parte de seus
+        observadores. É constituída por diversas frentes de movimentos
+        circulares, que mudam de direção frequentemente, e com o tempo são
+        apagadas pelas próprias sobreposições. É inspirada nos padrões deixados
+        na areia pela ação do vento.
+      </p>
+
+      <p>
+        A peça possui ainda variações utilizando três cores diferentes, ao invés
+        de adotar a própria cor do fundo como terceira cor (responsável pelo
+        efeito de apagamento sobre o desenho de tempos em tempos).
+      </p>
+    </div>
+  </body>
+
+  <script>
+    let c = "#000000";
+    let b = "#FFFFFF";
+
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    if (
+      typeof $_GET["fcolor"] != "undefined" &&
+      $_GET["fcolor"] != null &&
+      $_GET["fcolor"] != ""
+    ) {
+      c = "#" + $_GET["fcolor"];
+      document.querySelector(":root").style.setProperty("--cor-texto", c);
+    }
+
+    if (
+      typeof $_GET["bgcolor"] != "undefined" &&
+      $_GET["bgcolor"] != null &&
+      $_GET["bgcolor"] != ""
+    ) {
+      b = "#" + $_GET["bgcolor"];
+      document.querySelector(":root").style.setProperty("--cor-bg", b);
+    }
+
+    ajustaempty = function () {
+      let bloco = document.getElementById("wrap");
+      if (bloco.getBoundingClientRect().height < window.innerHeight - 150) {
+        console.log("true");
+        let diff =
+          (window.innerHeight - 150 - bloco.getBoundingClientRect().height) / 2;
+        document.getElementById("empty").style.height = diff + "px";
+      }
+    };
+
+    ajustaempty();
+
+    let hsl2hex = function (h, s, l) {
+      l /= 100;
+      const a = (s * Math.min(l, 1 - l)) / 100;
+      const f = (n) => {
+        const k = (n + h / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color)
+          .toString(16)
+          .padStart(2, "0"); // convert to Hex and prefix "0" if needed
+      };
+      return `#${f(0)}${f(8)}${f(4)}`;
+    };
+
+    let h = 0;
+
+    setInterval(function () {
+      document
+        .querySelector(":root")
+        .style.setProperty("--cor-var", hsl2hex(h, 46, 87));
+
+      h++;
+
+      if (h > 360) {
+        h = 0;
+      }
+    }, 10);
+  </script>
+</html>

@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+
+:root {
+  --cor-texto: #000000;
+  --cor-bg: #ffffff;
+  --cor-var: #55ff88;
+}
+
+body {
+  text-align: center;
+}
+
+#wrap {
+  text-align: left;
+  width: 80%;
+  max-width: 1200px;
+  color: var(--cor-texto);
+  margin-left: auto;
+  margin-right: auto;
+  column-count: 2;
+  column-gap: 20px;
+}
+
+#wrap p:first-of-type {
+  margin-top: 0;
+}
+
+h1 {
+  color: var(--cor-texto);
+  text-align: left;
+  font-size: max(min(2.1vw, 28px), 20px);
+  line-height: max(min(2.3vw, 32px), 22px);
+  margin-bottom: 10px;
+  font-family: "MuseoModerno", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  margin-bottom: 0;
+  column-span: all;
+}
+
+h2 {
+  color: var(--cor-texto);
+  text-align: left;
+  font-size: max(min(1.2vw, 14px), 12px);
+  line-height: max(min(1.4vw, 16px), 22px);
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 40px;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  margin-top: 0;
+  column-span: all;
+}
+
+p {
+  color: var(--cor-texto);
+  text-align: left;
+  font-size: max(min(1.8vw, 24px), 16px);
+  line-height: max(min(2.1vw, 28px), 18px);
+  font-family: "Source Serif 4", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@media screen and (max-width: 800px) {
+  #wrap {
+    column-count: 1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cor-texto);
+  background-color: var(--cor-texto);
+  opacity: 1;
+  background-image: linear-gradient(
+    0deg,
+    var(--cor-texto) 25%,
+    var(--cor-bg) 25%
+  );
+  background-size: 4px 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-var);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-var);
+}

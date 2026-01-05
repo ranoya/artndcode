@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Série Performáticos</title>
+    <meta name="generator" content="artesanal" />
+    <meta name="description" content="Organização de composições generativas criadas por Guilherme Ranoya">
+    <meta name="author" content="Prof. Dr. Guilherme Ranoya">
+    <meta name="keywords" content="arte generativa, computação criativa, código criativo">
+    <meta property="og:url" content="https://www.ranoya.com/arte/SerieAutomatos">
+    <meta property="og:title" content="Série Performáticos">
+    <meta property="og:description" content="Organização de composições generativas criadas por Guilherme Ranoya">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:site_name" content="ranoya.com">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image" content="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg" />
+    <meta property="og:image:secure_url" content="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg">
+    <link rel="image_src" type="image/jpg" href="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg" />
+
+    <link rel="icon" type="image/png" href="https://www.ranoya.com/Assets/coverimages/portfolio16.png">
+    <link rel="shortcut icon" href="https://www.ranoya.com/Assets/coverimages/portfolio57.png" />
+    <link rel="apple-touch-icon" href="https://www.ranoya.com/Assets/coverimages/portfolio57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.ranoya.com/Assets/coverimages/portfolio72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.ranoya.com/Assets/coverimages/portfolio114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.ranoya.com/Assets/coverimages/portfolio144.png" />
+
+    <link REL="stylesheet" type="text/css" href="../mostra.css">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#FFFFFF">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#FFFFFF">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+
+</head>
+
+
+
+<body>
+    <a name="automata" class="indice">Performáticos</a>
+    <nav id="indices"></nav>
+    <div id="series">
+        <p class="decoracao">ART/ANC/ODE</p>
+        <br>
+        <p class="torto">Séries</p>
+        <br><br>
+        <a id="com" href="../SerieComportamentais">Comportamentais</a><br>
+        <a id="aut" href="../SerieAutomatos">Autômatos</a><br>
+        <a id="per" href="../SeriePerformaticos">Performáticos</a><br>
+        <a id="sob" href="../Sobre">Sobre o catálogo</a><br>
+    </div>
+    <div id="profilephoto"></div>
+    <div id="profilename">GUILHERME RANOYA</div>
+    <div id="barcolor"></div>
+    <div id="barcolor2"></div>
+    <div id="botaonavegacao">
+        <a id="navplus" href="javascript:menu(250);">
+            <hr id="hamup">
+            </hr>
+            <hr id="hammed">
+            </hr>
+            <hr id="hambot">
+            </hr>
+        </a>
+    </div>
+    <div id="mobileadvise"><b>Aviso</b><br>O conteúdo deste documento pode ser muito pesado para um dispositivo mobile
+    </div>
+    <span class="bigwhitespace"></span>
+
+    <span class="bloco">
+        <h1>Série<br>Performáticos</h1>
+        <p class="decoracao">ART/ANC/ODE</p>
+
+        <span class="smallwhitespace"></span>
+
+        <p class="masterdescricaoleft">A série Performáticos é um conjunto de mecanismos criados para gerar uma imagem
+            final, resultado da forma como um usuário lida com eles. Como um jogo, não há um controle
+            integral por quem os usa, mas um diálogo com suas reações e regras, e a habilidade/técnica em dialogar com
+            eles para produzir um
+            resultado interessante. Esta série foi criada para produzir composições exclusivamente visuais à partir de
+            uma performance; dos gestos de seus utilizadores.</p>
+
+        <p class="masterdescricaoright">As imagens criadas nelas foram utilizadas em materiais impressos ou
+            multimidiáticos diversos, com contextos, formatos, identidades e características gráficas muito variadas.
+            Optou-se, como em todas as demais séries, pelo
+            uso do alto contraste (preto e branco) para que
+            pudessem ser aplicadas sobre a matiz própria do material em que seriam inseridos, independente de quais
+            fossem as combinações cromáticas utilizadas nele.</p>
+
+    </span>
+
+
+    <a name="ivertigo" class="indice">Vergtigem</a>
+    <span class="bloco imageblock">
+        <a target="_blank" href="https://omnifolio.vercel.app/portfolio/vertigem_blue.png"
+            style="background-image: url(https://omnifolio.vercel.app/portfolio/vertigem_blue.png);">
+        </a>
+
+        <a target="_blank" href="https://omnifolio.vercel.app/portfolio/vertigem_8bit.png"
+            style="background-image: url(https://omnifolio.vercel.app/portfolio/vertigem_8bit.png);">
+        </a>
+
+    </span>
+
+    <div id="dvertigo" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import vertigo from "../Pecas/vertigemper.js";
+
+          let playvertigo = vertigo({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'dvertigo'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Vertigem</b><br>2024</h2>
+        <p>Versão performática para peça criada originalmente na forma <a href="https://www.ranoya.com/Art/SerieComportamentais/#iconVertigem">comportamental</a>.Partindo de um <a target="_blank" href="https://cdn.booooooom.com/wp-content/uploads/2015/10/jaemin-lee17.jpg">poster da Braun alemã</a>, que se utiliza de uma design modernista tanto para seus produtos quanto para o próprio design gráfico, esta peça foi a tentativa de desenhar progressões semelhantes, mas ao longo de um caminho circular, e aplicando concretamente o movimento que fica insinuado na própria progressão.</p>
+    </span>
+
+    <hr style="clear: both; border: none; margin-bottom: 90px;">
+
+    <a name="iperfoire" class="indice">Perfoiré</a>
+    <span class="bloco imageblock">
+        <a target="_blank" href="https://www.ranoya.com/Assets/portfolio/twotubes.png"
+            style="background-image: url(https://www.ranoya.com/Assets/portfolio//twotubes.png);">
+        </a>
+
+        <a target="_blank" href="https://www.ranoya.com/Assets/portfolio/theSea.png"
+            style="background-image: url(https://www.ranoya.com/Assets/portfolio/theSea.png);">
+        </a>
+
+        <a target="_blank" href="https://www.ranoya.com/Assets/portfolio/balance.png"
+            style="background-image: url(https://www.ranoya.com/Assets/portfolio/balance.png);">
+        </a>
+    </span>
+    <div id="dperfoire" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import perf from "../Pecas/perfoire.js";
+
+          let playperf = perf({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'dperfoire'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Perfoiré</b><br>2020</h2>
+        <p>Ao clicar, o mecanismo inicia o desenho, e não parará. Ao se pressionar o botão do mouse, o círculo
+            diminuirá. Estas são as regras de Perfoiré. A habilidade em lidar com os rastros deixados na tela produzirá
+            uma imagem interessante, ou não. O cíclo se ressetará quando o círculo de desenho foi infinitamente
+            diminuto.</p>
+    </span>
+
+
+    <hr style="clear: both; border: none; margin-bottom: 90px;">
+
+
+    <a name="igael" class="indice">Gael Play</a>
+    <span class="bloco imageblock">
+        <a target="_blank" href="https://www.ranoya.com/Assets/portfolio/gaelplay1.png"
+            style="background-image: url(https://www.ranoya.com/Assets/portfolio/gaelplay1.png);">
+        </a>
+
+        <a target="_blank" href="https://www.ranoya.com/Assets/portfolio/gaelplay2.png"
+            style="background-image: url(https://www.ranoya.com/Assets/portfolio/gaelplay2.png);">
+        </a>
+
+    </span>
+
+    <div id="dgael" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import gael from "../Pecas/gael.js";
+
+          let playgael = gael({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'dgael'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Gael Play</b><br>2020</h2>
+        <p>Um brinquedo criado para entreter Gael, na energia de seus 4 anos, confinado em um apartamento durante a
+            pandemia de 2020. A cada click uma nova peça - um retângulo, um círculo ou um quadrado (elementos do
+            vocabulário visual dele) - surgirá na tela,
+            com dimensões aleatórias. </p>
+    </span>
+
+    <hr style="clear: both; border: none; margin-bottom: 90px;">
+
+    <a name="iconcentric" class="indice">Concentricon</a>
+    <span class="bloco imageblock">
+        <a target="_blank" href="https://omnifolio.vercel.app/portfolio/concentri2-1-1.png"
+            style="background-image: url(https://omnifolio.vercel.app/portfolio/concentri2-1-1.png);">
+        </a>
+
+        <a target="_blank" href="https://omnifolio.vercel.app/portfolio/concentri2-1-2.png"
+            style="background-image: url(https://omnifolio.vercel.app/portfolio/concentri2-1-2.png);">
+        </a>
+
+        <a target="_blank" href="https://omnifolio.vercel.app/portfolio/concentri2-1-3.png"
+            style="background-image: url(https://omnifolio.vercel.app/portfolio/concentri2-1-3.png);">
+        </a>
+    </span>
+    <div id="concentricon" style="width: 100%; height: 600px;"></div>
+
+    <script type="module">
+        import concentriper from "../Pecas/concentricon_per.js";
+
+          let playconcentriper = concentriper({
+          p5,
+          'bgcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-invert'),
+          'fcolor': getComputedStyle(document.documentElement)
+          .getPropertyValue('--cor-base'),
+          'el': 'concentricon'
+          });
+
+        </script>
+
+    <span class="bloco">
+        <h2><b>Concentricon Noise</b><br>2019</h2>
+        <p>Peça criada originalmente para ilustrar a capa de um livro digital sobre design de interfaces. Ela explora o efeito moiré sobre movimentos circulares concêntricos de blocos sobrepostos. As diferentes proporções de movimento em cada superfície a tornam altamente dinâmica, e as formas concêntricas criam uma sensação de encaixe que provoca um prazer comportamental. Nesta versão, a sobreposição dos movimentos é explorada para gerar ruído gráfico.</p>
+    </span>
+
+
+
+
+
+
+    <span class="bloco rodape">
+
+        <svg width="719" height="719" viewBox="0 0 1566 1566" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 30px; height: 30px; float: left; margin-bottom: 20px; vertical-align: top; margin-right: 10px;">
+<g id="ranoyalogo" clip-path="url(#clip0_1_2)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H1566V1566H0V0ZM819.551 1233.25C861.767 1258.42 910.72 1271 966.41 1271C1023 1271 1072.4 1258.42 1114.61 1233.25C1156.83 1207.19 1189.62 1173.04 1212.97 1130.8C1236.32 1087.66 1248 1040.48 1248 989.254V311.177H1055.33V1012.17C1055.33 1028.35 1051.29 1043.18 1043.21 1056.66C1035.12 1070.14 1024.34 1080.92 1010.87 1089.01C997.398 1097.1 982.577 1101.14 966.41 1101.14C950.242 1101.14 935.421 1097.1 921.948 1089.01C909.373 1080.92 899.043 1070.14 890.959 1056.66C882.876 1043.18 878.834 1028.35 878.834 1012.17V576.746C878.834 524.621 867.157 477.438 843.803 435.199C820.45 392.959 787.665 359.258 745.449 334.094C703.233 308.031 653.831 295 597.243 295C541.554 295 492.601 308.031 450.385 334.094C408.169 359.258 375.384 392.959 352.03 435.199C328.677 477.438 317 524.621 317 576.746V1254.82H509.667V553.829C509.667 537.652 513.709 522.823 521.793 509.343C529.877 495.862 540.206 485.077 552.781 476.989C566.255 468.901 581.075 464.856 597.243 464.856C613.411 464.856 628.232 468.901 641.705 476.989C655.178 485.077 665.957 495.862 674.041 509.343C682.124 522.823 686.166 537.652 686.166 553.829V989.254C686.166 1040.48 697.843 1087.66 721.197 1130.8C744.55 1173.04 777.335 1207.19 819.551 1233.25Z"/>
+</g>
+<defs>
+<clipPath id="clip0_1_2">
+<rect width="1566" height="1566" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+        <h6>COPYRIGHT &copy; 2020, GUILHERME RANOYA</h6>
+
+
+
+    </span>
+
+    <script src="../interface.js"></script>
+</body>
+
+</html>

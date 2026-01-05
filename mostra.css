@@ -1,0 +1,569 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+:root {
+  --cor-highlight: grey;
+  --cor-base: #000000;
+  --cor-lighter: #999999;
+  --cor-mid: grey;
+  --cor-invert: #ffffff;
+  --hamburger-off: #96a4a4;
+  --hamburger-on: black;
+
+  --cor-invert: #fef6e4;
+  --cor-lighter: #efe8d6;
+  --cor-base: #616161;
+  --cor-link: #96a4a4;
+  --cor-nada: #63baa9;
+}
+
+h1 {
+  font-family: "MuseoModerno", cursive;
+}
+
+#botaonavegacao {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: calc(50vh - 60px);
+  left: 25px;
+  z-index: 500;
+  transform: rotate(-180deg);
+}
+
+#navplus {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid transparent;
+  transition: all 0.1s ease-in;
+}
+
+#hamup {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  height: 10%;
+  margin-top: 22%;
+  margin-left: 17.5%;
+  background-color: var(--hamburger-off, #666666);
+  border: 0 none transparent;
+  transition: all 0.1s ease-in;
+}
+
+#hammed {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  height: 10%;
+  margin-top: 10%;
+  margin-left: 17.5%;
+  background-color: var(--hamburger-off, #666666);
+  border: 0 none transparent;
+  transition: all 0.1s ease-in;
+}
+
+#hambot {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  height: 10%;
+  margin-top: 10%;
+  margin-left: 17.5%;
+  background-color: var(--hamburger-off, #666666);
+  border: 0 none transparent;
+  transition: all 0.1s ease-in;
+}
+
+#navplus:hover {
+  border: 1px transparent none;
+  transition: all 0.1s ease-in;
+}
+
+#navplus:hover #hamup {
+  transform: rotate(-45deg);
+  width: 40%;
+  margin-left: 0;
+  margin-top: 33%;
+  margin-bottom: -6%;
+  transition: all 0.1s ease-in;
+  background-color: var(--hamburger-on, black);
+}
+
+#navplus:hover #hambot {
+  transform: rotate(45deg);
+  width: 40%;
+  margin-left: 0;
+  margin-top: 1%;
+  transition: all 0.1s ease-in;
+  background-color: var(--hamburger-on, black);
+}
+
+#navplus:hover #hammed {
+  margin-left: 7%;
+  width: 70%;
+  margin-top: 7%;
+  transition: all 0.1s ease-in;
+  background-color: var(--hamburger-on, black);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  color: var(--cor-base, #000000);
+  background-color: var(--cor-invert, #ffffff);
+  overflow-x: hidden;
+}
+
+#mobileadvise {
+  display: none;
+}
+
+div#series {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: fixed;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
+  width: calc(360px - 70px);
+  height: 100vh;
+  left: -360px;
+  text-align: right;
+  top: 0;
+  font-size: 52px;
+
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Times New Roman', Times, serif; */
+  background-color: var(--cor-highlight, #666666);
+  color: var(--cor-invert, white);
+}
+
+div#series p.torto {
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Times New Roman', Times, serif; */
+  font-size: 52px;
+  color: var(--cor-invert, white);
+  width: 180px;
+  height: 52px;
+  transform: rotate(-90deg);
+  margin-left: 210px;
+  border: none 0 transparent;
+  margin-top: 25px;
+}
+
+nav#indices {
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Montserrat', sans-serif; */
+  position: fixed;
+  width: 170px;
+  height: calc(100vh - 190px);
+  right: 11px;
+  top: 0;
+  z-index: 10;
+  padding-top: 190px;
+}
+
+nav a {
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Montserrat', sans-serif; */
+  text-transform: uppercase;
+  font-size: 10px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+  padding: 10px;
+  padding-right: 13px;
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: transparent;
+  color: var(--cor-mid, #666666);
+  margin-bottom: -10px;
+  transition: all 0.2s ease-out;
+}
+
+nav a:hover {
+  background-color: var(--cor-highlight, #ff0000);
+  color: var(--cor-invert, white);
+  transition: all 0.4s ease-out;
+}
+
+.ligado {
+  border-left-color: var(--cor-highlight, #ff0000);
+  transition: all 0.4s ease-out;
+  color: var(--cor-highlight, #ff0000);
+}
+
+span.bloco {
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bloco a {
+  text-decoration: none;
+  display: inline-block;
+  text-align: left;
+  padding: 10px;
+  margin: -10px;
+  color: var(--cor-mid, #666666);
+  transition: all 0.2s ease-out;
+}
+
+.bloco a:hover {
+  background-color: var(--cor-highlight, #ff0000);
+  color: var(--cor-invert, white);
+  transition: all 0.4s ease-out;
+}
+
+.rodape {
+  margin-top: 280px !important;
+  display: block;
+  width: calc(100% - 40px) !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+p {
+  float: left;
+  width: 50%;
+}
+
+h1 {
+  font-size: 7vw;
+  line-height: calc(7vw - 10px);
+}
+
+h2 {
+  width: 170px;
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Montserrat', sans-serif; */
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--cor-mid, #666666);
+  float: left;
+  padding-right: 20px;
+}
+
+h2 b {
+  color: var(--cor-highlight, #ff0000);
+}
+
+p {
+  float: left;
+  padding-left: 20px;
+  border-left: 1px solid var(--cor-mid, grey);
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Times New Roman', Times, serif; */
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+}
+
+div {
+  margin-top: 60px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.bigwhitespace {
+  display: inline-block;
+  width: 100%;
+  height: 190px;
+}
+
+.smallwhitespace {
+  display: inline-block;
+  width: 100%;
+  height: 30px;
+}
+
+.indice {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.decoracao {
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Montserrat', sans-serif; */
+  font-size: 14px;
+  color: var(--cor-mid, #666666);
+  border: 0 none transparent;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+div#series p.decoracao {
+  color: var(--cor-lighter, #999999);
+  text-align: right;
+  font-size: 105px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  margin-left: -130px;
+}
+
+div#series a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Montserrat',
+        sans-serif; */
+
+  font-size: 20px;
+  line-height: 30px;
+  text-decoration: none;
+  text-align: right;
+  margin: 0;
+  margin-bottom: -100px;
+  margin-left: -40px;
+  padding: 40px;
+  padding-right: 30px;
+  color: var(--cor-invert, #ffffff);
+  transition: all 0.4s ease-out;
+}
+
+div#series a:hover {
+  color: var(--cor-highlight, #666666);
+  background-color: var(--cor-invert, #ffffff);
+  transition: all 0.4s ease-out;
+}
+
+.masterdescricaoleft {
+  width: calc(50% - 60px);
+  border: 0 none transparent;
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.masterdescricaoright {
+  width: calc(50% - 60px);
+  border: 0 none transparent;
+  margin-left: 0;
+  padding-left: 10px;
+}
+
+.imageblock {
+  display: inline-block;
+  width: 100%;
+  height: 300px;
+}
+
+.imageblock a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: calc(28% - 10px);
+  height: calc(100% - 10px);
+  margin-right: 2%;
+  border: 5px solid var(--cor-base, #000000);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  float: left;
+  transition: all 0.3s ease-out;
+}
+
+.imageblock a:hover {
+  border: 5px solid var(--cor-highlight, grey);
+  transition: all 0.3s ease-out;
+}
+
+#profilephoto {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-highlight, #ff0000);
+  background-image: url(https://www.ranoya.com/Assets/Avatars/!!!00000.jpeg);
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: left top;
+  max-width: 40px;
+  min-width: 40px;
+  width: 10vw;
+  max-width: 40px;
+  min-width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: block;
+  z-index: 40;
+}
+
+#barcolor {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: calc(100% - 201px);
+  position: fixed;
+  top: 0;
+  left: 20px;
+  background-color: var(--cor-highlight, #ff0000);
+  transition: width 0.3s ease-in;
+  z-index: 20;
+}
+
+#barcolor2 {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: calc(100% - 201px);
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  background-color: var(--cor-highlight, #ff0000);
+  transition: width 0.6s ease-in-out;
+  z-index: 20;
+}
+
+#profilename {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 150px;
+  text-align: right;
+  top: 130px;
+  left: -35px;
+  transform: rotate(-90deg);
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Montserrat', sans-serif; */
+  font-size: 17px;
+  color: #999999;
+  font-weight: 400;
+}
+
+#ranoyalogo {
+  fill: var(--cor-lighter, #999999);
+}
+
+h6 {
+  font-size: 10px;
+  line-height: 28px;
+  font-family: "MuseoModerno", cursive;
+  /* font-family:  'Montserrat', sans-serif; */
+  font-weight: 400;
+}
+
+@media screen and (max-width: 910px) {
+  nav#indices {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #mobileadvise {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: calc(100% - 80px);
+    height: 50px;
+    padding: 15px;
+    color: var(--cor-invert, white);
+    background-color: var(--cor-lighter, #999999);
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    font-family: "MuseoModerno", cursive;
+    /* font-family:  'Montserrat', sans-serif; */
+    transition: right 0.6s ease-out;
+  }
+
+  #botaonavegacao {
+    width: 30px;
+    height: 30px;
+    /*  top: 220px; */
+    left: 20px;
+  }
+
+  span.bloco {
+    width: calc(100% - 80px);
+    margin-left: 60px;
+    margin-right: 20px;
+  }
+
+  #profilephoto {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    background-size: 30px 30px;
+  }
+
+  #barcolor {
+    height: 25px;
+  }
+
+  #barcolor2 {
+    height: 25px;
+    top: 25px;
+  }
+
+  #profilename {
+    width: 350px;
+    top: 230px;
+    left: -140px;
+  }
+
+  p {
+    width: calc(100% - 50px);
+    padding-left: 0;
+    border-left: 0 none transparent;
+  }
+
+  h1 {
+    line-height: calc(7vw - 3px);
+  }
+
+  h2 {
+    width: calc(100% - 20px);
+    margin-bottom: 20px;
+  }
+
+  .masterdescricaoleft {
+    width: calc(100% - 30px);
+    padding-right: 0;
+  }
+
+  .masterdescricaoright {
+    width: calc(100% - 30px);
+    padding-left: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: var(--cor-invert, #ffffff);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--cor-invert, #ffffff);
+  border-right: 5px solid var(--cor-highlight, grey);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-right: 5px solid var(--cor-highlight, grey);
+  border-left: 9px solid var(--cor-lighter);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cor-invert, #ffffff);
+}

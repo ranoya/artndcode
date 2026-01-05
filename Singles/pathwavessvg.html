@@ -1,0 +1,95 @@
+<style>
+  #meusvg svg {
+    width: 100vw !important;
+    height: 71vw !important;
+    border: 1px solid black;
+  }
+</style>
+
+<a id="downloaddosvg">File</a>
+
+<div id="meusvg" style="height: 80vh"></div>
+
+<script>
+  let precision = 0.03;
+  let itera = 600;
+  let windowWidth = 1260; // A4 / A3
+  let windowHeight = 891; // A4 / A3
+
+  let cor = "#000000";
+  let trilhas = [];
+
+  for (let k = 0; k < 16; k++) {
+    trilhas[k] = {
+      detax: 0,
+      deltay: 0,
+      newr: 0,
+      a: Math.random() * (2 * Math.PI),
+      r: 80 + Math.random() * 180,
+      esp: Math.random() * 150,
+      step: Math.random() * 0.1,
+      rx: 100,
+      ry: 100,
+      dir: 1,
+      p1x: 0,
+      p1y: 0,
+      p2x: 0,
+      p2y: 0,
+    };
+
+    trilhas[k].rx = Math.random() * windowWidth;
+    trilhas[k].ry = Math.random() * windowHeight;
+  }
+
+  let drawitself = function (arr) {
+    let svgc = "";
+
+    arr.p1x = arr.rx + Math.cos(arr.a) * arr.r;
+    arr.p1y = arr.ry + Math.sin(arr.a) * arr.r;
+    arr.p2x = arr.rx + Math.cos(arr.a) * (arr.r + arr.esp);
+    arr.p2y = arr.ry + Math.sin(arr.a) * (arr.r + arr.esp);
+
+    svgc = `<line x1="${arr.p1x}" y1="${arr.p1y}" x2="${arr.p2x}" y2="${arr.p2y}" style="stroke:${cor}; stroke-width:1"/>`;
+
+    if (Math.random() * 100 > 98) {
+      arr.newr = parseInt(Math.random() * 150);
+
+      arr.deltax =
+        Math.cos(arr.a) * arr.r + Math.cos(arr.a) * (arr.newr + arr.esp);
+      arr.deltay =
+        Math.sin(arr.a) * arr.r + Math.sin(arr.a) * (arr.newr + arr.esp);
+
+      arr.r = arr.newr;
+      arr.rx = arr.rx + arr.deltax;
+      arr.ry = arr.ry + arr.deltay;
+
+      arr.a = arr.a - Math.PI;
+      arr.dir = arr.dir * -1;
+      arr.step = Math.random() * precision;
+    }
+
+    arr.a = arr.a + arr.dir * arr.step;
+
+    return svgc;
+  };
+
+  let codefinal = `<svg xmlns="http://www.w3.org/2000/svg" id="pathwaves" viewBox="0 0 1260 891">`;
+
+  for (let p = 0; p < itera; p++) {
+    for (let z = 0; z < 16; z++) {
+      codefinal += drawitself(trilhas[z]);
+    }
+  }
+
+  codefinal += `</svg>`;
+
+  document.getElementById("meusvg").innerHTML = codefinal;
+
+  let botao = document.getElementById("downloaddosvg");
+
+  botao.setAttribute("download", "pathwaves.svg");
+  botao.setAttribute(
+    "href",
+    "data:image/xvg+xml;utf-8," + encodeURIComponent(codefinal)
+  );
+</script>
