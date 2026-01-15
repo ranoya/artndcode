@@ -8,10 +8,18 @@
 
 html {
   background-color: var(--cor-bg, #ffffff);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 body {
   text-align: center;
   background-color: var(--cor-bg, #ffffff);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 #wrap {
