@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<html>
+  <head>
+    <title>Turbulensi</title>
+    <link rel="stylesheet" type="text/css" href="textos.css" />
+  </head>
+  <body
+    onresize="ajustaempty()"
+    onclick="javascript:parent.postMessage('n','*')"
+  >
+    <div id="empty" style="height: 0"></div>
+    <div id="wrap">
+      <h1>TURBULENSI</h1>
+      <h2>2018</h2>
+
+      <p>
+        Uma referência ao cartaz de “Um corpo que cai” (Vertigo), criado pelo
+        designer gráfico Saul Bass. A sequência de abertura do filme foi a
+        primeira no cinema a utilizar computação gráfica para ser produzida. A
+        obra de Bass, além de icônica, possui uma visualidade bastante lúdica.
+      </p>
+
+      <p>
+        Turbulensi foi originalmente criada para ilustrar um texto abordando o
+        infinito e tortuoso processo de ressignificação. Como uma silépse sobre
+        este processo, o desenho vai girando em torno de um eixo instável, se
+        deformando e se desenvolvendo, até se transformar, pela inversão sobre o
+        que é plano, e o que é fundo, em algo totalmente diferente do que era no
+        início.
+      </p>
+    </div>
+  </body>
+
+  <script>
+    let c = "#000000";
+    let b = "#FFFFFF";
+
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    if (
+      typeof $_GET["fcolor"] != "undefined" &&
+      $_GET["fcolor"] != null &&
+      $_GET["fcolor"] != ""
+    ) {
+      c = "#" + $_GET["fcolor"];
+      document.querySelector(":root").style.setProperty("--cor-texto", c);
+    }
+
+    if (
+      typeof $_GET["bgcolor"] != "undefined" &&
+      $_GET["bgcolor"] != null &&
+      $_GET["bgcolor"] != ""
+    ) {
+      b = "#" + $_GET["bgcolor"];
+      document.querySelector(":root").style.setProperty("--cor-bg", b);
+    }
+
+    ajustaempty = function () {
+      let bloco = document.getElementById("wrap");
+      if (bloco.getBoundingClientRect().height < window.innerHeight - 150) {
+        console.log("true");
+        let diff =
+          (window.innerHeight - 150 - bloco.getBoundingClientRect().height) / 2;
+        document.getElementById("empty").style.height = diff + "px";
+      }
+    };
+
+    ajustaempty();
+
+    let hsl2hex = function (h, s, l) {
+      l /= 100;
+      const a = (s * Math.min(l, 1 - l)) / 100;
+      const f = (n) => {
+        const k = (n + h / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color)
+          .toString(16)
+          .padStart(2, "0"); // convert to Hex and prefix "0" if needed
+      };
+      return `#${f(0)}${f(8)}${f(4)}`;
+    };
+
+    let h = 0;
+
+    setInterval(function () {
+      document
+        .querySelector(":root")
+        .style.setProperty("--cor-var", hsl2hex(h, 46, 87));
+
+      h++;
+
+      if (h > 360) {
+        h = 0;
+      }
+    }, 10);
+  </script>
+</html>
