@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset="utf-8" />
 <html>
   <head>
@@ -6,9 +6,20 @@
     <link rel="stylesheet" type="text/css" href="textos.css" />
   </head>
   <body
-    onresize="ajustaempty()"
-    onmouseover="ajustaempty()"
-    onclick="javascript:parent.postMessage('n','*')"
+    onclick="javascript: parent.postMessage('n', '*');"
+    style="
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      width: calc(100vw - 80px);
+      height: calc(100dvh - 80px);
+      overflow: hidden;
+      padding: 40px;
+      padding-top: 0;
+      padding-bottom: 80px;
+      margin: 0;
+    "
   >
     <div id="empty" style="height: 0"></div>
     <div id="wrap">

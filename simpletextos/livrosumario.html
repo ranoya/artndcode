@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset="utf-8" />
 <html>
   <head>
@@ -55,7 +55,6 @@
     </style>
   </head>
   <body onresize="ajustaempty()" onmouseover="ajustaempty()">
-    <div id="empty" style="height: 0"></div>
     <div id="wrap" style="column-count: 1">
       <div
         style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px 20px"
@@ -221,18 +220,6 @@
       b = "#" + $_GET["bgcolor"];
       document.querySelector(":root").style.setProperty("--cor-bg", b);
     }
-
-    ajustaempty = function () {
-      let bloco = document.getElementById("wrap");
-      if (bloco.getBoundingClientRect().height < window.innerHeight - 150) {
-        console.log("true");
-        let diff =
-          (window.innerHeight - 150 - bloco.getBoundingClientRect().height) / 2;
-        document.getElementById("empty").style.height = diff + "px";
-      }
-    };
-
-    ajustaempty();
 
     let hsl2hex = function (h, s, l) {
       l /= 100;

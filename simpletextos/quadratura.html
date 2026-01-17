@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <meta charset="utf-8" />
 <html>
   <head>
@@ -6,10 +6,21 @@
     <link rel="stylesheet" type="text/css" href="textos.css" />
   </head>
   <body
-    onresize="ajustaempty()"
-    onclick="javascript:parent.postMessage('n','*')"
+    onclick="javascript: parent.postMessage('n', '*');"
+    style="
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      width: calc(100vw - 80px);
+      height: calc(100dvh - 80px);
+      overflow: hidden;
+      padding: 40px;
+      padding-top: 0;
+      padding-bottom: 80px;
+      margin: 0;
+    "
   >
-    <div id="empty" style="height: 0"></div>
     <div id="wrap">
       <h1>QUADRATURA</h1>
       <h2>2019</h2>
@@ -65,17 +76,5 @@
       b = "#" + $_GET["bgcolor"];
       document.querySelector(":root").style.setProperty("--cor-bg", b);
     }
-
-    ajustaempty = function () {
-      let bloco = document.getElementById("wrap");
-      if (bloco.getBoundingClientRect().height < window.innerHeight - 150) {
-        console.log("true");
-        let diff =
-          (window.innerHeight - 150 - bloco.getBoundingClientRect().height) / 2;
-        document.getElementById("empty").style.height = diff + "px";
-      }
-    };
-
-    ajustaempty();
   </script>
 </html>
