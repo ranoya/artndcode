@@ -4,24 +4,23 @@
   <head>
     <title>Helix</title>
     <link rel="stylesheet" type="text/css" href="textos.css" />
+    <style>
+      body {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        width: calc(100vw - 80px);
+        height: calc(100dvh - 80px);
+        overflow: hidden;
+        padding: 40px;
+        padding-top: 0;
+        padding-bottom: 80px;
+        margin: 0;
+      }
+    </style>
   </head>
-  <body
-    onclick="javascript: parent.postMessage('n', '*');"
-    style="
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      align-items: center;
-      width: calc(100vw - 80px);
-      height: calc(100dvh - 80px);
-      overflow: hidden;
-      padding: 40px;
-      padding-top: 0;
-      padding-bottom: 80px;
-      margin: 0;
-    "
-  >
-    <div id="empty" style="height: 0"></div>
+  <body onclick="javascript: parent.postMessage('n', '*');">
     <div id="wrap">
       <h1>HELIX</h1>
       <h2>2020</h2>
