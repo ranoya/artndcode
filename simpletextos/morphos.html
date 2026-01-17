@@ -59,6 +59,44 @@
     })();
 
     if (
+      typeof $_GET["t"] != "undefined" &&
+      $_GET["t"] != null &&
+      $_GET["t"] != ""
+    ) {
+      document.getElementByTagName("body")[0].style.width = "50vw !important";
+      document.getElementByTagName("body")[0].style.alignItems =
+        "flex-start !important;";
+      document.getElementByTagName("body")[0].style.paddingTop =
+        "80px !important;";
+      document.getElementByTagName("body")[0].style.paddingBottom =
+        "0 !important;";
+    }
+
+    if (
+      typeof $_GET["b"] != "undefined" &&
+      $_GET["t"] != null &&
+      $_GET["t"] != ""
+    ) {
+      document.getElementByTagName("body")[0].style.width = "50vw !important";
+      document.getElementByTagName("body")[0].style.alignItems =
+        "flex-end !important;";
+      document.getElementByTagName("body")[0].style.paddingTop =
+        "0 !important;";
+      document.getElementByTagName("body")[0].style.paddingTop =
+        "80px !important;";
+    }
+
+    if (
+      typeof $_GET["r"] != "undefined" &&
+      $_GET["t"] != null &&
+      $_GET["t"] != ""
+    ) {
+      document.getElementByTagName("body")[0].style.width = "50vw !important";
+      document.getElementByTagName("body")[0].style.paddingLeft =
+        "calc(50vw - 40px) !important";
+    }
+
+    if (
       typeof $_GET["fcolor"] != "undefined" &&
       $_GET["fcolor"] != null &&
       $_GET["fcolor"] != ""
