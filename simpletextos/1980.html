@@ -50,6 +50,8 @@
   </body>
 
   <script>
+    console.log("teste");
+
     let c = "#000000";
     let b = "#FFFFFF";
 
@@ -82,12 +84,20 @@
         "0 !important";
     }
 
+    console.log("b -> " + $_GET["b"]);
     if (
       typeof $_GET["b"] != "undefined" &&
       $_GET["b"] != null &&
       $_GET["b"] != ""
     ) {
+      console.log("entrou em b");
+
+      console.log("achou o body? " + document.getElementsByTagName("body")[0]);
       document.getElementsByTagName("body")[0].style.width = "50vw !important";
+
+      console.log("setou o width ou não?");
+      console.log(document.getElementsByTagName("body")[0].style.width);
+
       document.getElementsByTagName("body")[0].style.alignItems =
         "flex-end !important";
       document.getElementsByTagName("body")[0].style.paddingTop =
