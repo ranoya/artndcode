@@ -19,8 +19,23 @@
         margin: 0;
       }
 
-      .catzo {
-        background-color: white !important;
+      .b {
+        width: 50vw !important;
+        align-items: flex-end !important;
+        padding-top: 0 !important;
+        padding-bottom: 80px !important;
+      }
+
+      .t {
+        width: 50vw !important;
+        align-items: flex-start !important;
+        padding-top: 80px !important;
+        padding-bottom: 0 !important;
+      }
+
+      .r {
+        width: 50vw !important;
+        padding-left: calc(50vw - 40px) !important;
       }
     </style>
   </head>
@@ -53,8 +68,6 @@
   </body>
 
   <script>
-    console.log("teste");
-
     let c = "#000000";
     let b = "#FFFFFF";
 
@@ -78,37 +91,15 @@
       $_GET["t"] != null &&
       $_GET["t"] != ""
     ) {
-      document.getElementsByTagName("body")[0].style.width = "50vw !important";
-      document.getElementsByTagName("body")[0].style.alignItems =
-        "flex-start !important";
-      document.getElementsByTagName("body")[0].style.paddingTop =
-        "80px !important";
-      document.getElementsByTagName("body")[0].style.paddingBottom =
-        "0 !important";
+      document.getElementByTagName("body")[0].classList.add("t");
     }
 
-    console.log("b -> " + $_GET["b"]);
     if (
       typeof $_GET["b"] != "undefined" &&
       $_GET["b"] != null &&
       $_GET["b"] != ""
     ) {
-      console.log("entrou em b");
-
-      document.getElementByTagName("body")[0].classList.add("catzo");
-
-      console.log("achou o body? " + document.getElementsByTagName("body")[0]);
-      document.getElementsByTagName("body")[0].style.width = "50vw !important";
-
-      console.log("setou o width ou não?");
-      console.log(document.getElementsByTagName("body")[0].style.width);
-
-      document.getElementsByTagName("body")[0].style.alignItems =
-        "flex-end !important";
-      document.getElementsByTagName("body")[0].style.paddingTop =
-        "0 !important";
-      document.getElementsByTagName("body")[0].style.paddingTop =
-        "80px !important";
+      document.getElementByTagName("body")[0].classList.add("b");
     }
 
     if (
@@ -116,9 +107,7 @@
       $_GET["r"] != null &&
       $_GET["r"] != ""
     ) {
-      document.getElementsByTagName("body")[0].style.width = "50vw !important";
-      document.getElementsByTagName("body")[0].style.paddingLeft =
-        "calc(50vw - 40px) !important";
+      document.getElementByTagName("body")[0].classList.add("r");
     }
 
     if (

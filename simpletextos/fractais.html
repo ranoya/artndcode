@@ -18,6 +18,25 @@
         padding-bottom: 80px;
         margin: 0;
       }
+
+      .b {
+        width: 50vw !important;
+        align-items: flex-end !important;
+        padding-top: 0 !important;
+        padding-bottom: 80px !important;
+      }
+
+      .t {
+        width: 50vw !important;
+        align-items: flex-start !important;
+        padding-top: 80px !important;
+        padding-bottom: 0 !important;
+      }
+
+      .r {
+        width: 50vw !important;
+        padding-left: calc(50vw - 40px) !important;
+      }
     </style>
   </head>
   <body onclick="javascript: parent.postMessage('n', '*');">
@@ -76,13 +95,7 @@
       $_GET["t"] != null &&
       $_GET["t"] != ""
     ) {
-      document.getElementsByTagName("body")[0].style.width = "50vw !important";
-      document.getElementsByTagName("body")[0].style.alignItems =
-        "flex-start !important";
-      document.getElementsByTagName("body")[0].style.paddingTop =
-        "80px !important";
-      document.getElementsByTagName("body")[0].style.paddingBottom =
-        "0 !important";
+      document.getElementByTagName("body")[0].classList.add("t");
     }
 
     if (
@@ -90,13 +103,7 @@
       $_GET["b"] != null &&
       $_GET["b"] != ""
     ) {
-      document.getElementsByTagName("body")[0].style.width = "50vw !important";
-      document.getElementsByTagName("body")[0].style.alignItems =
-        "flex-end !important";
-      document.getElementsByTagName("body")[0].style.paddingTop =
-        "0 !important";
-      document.getElementsByTagName("body")[0].style.paddingTop =
-        "80px !important";
+      document.getElementByTagName("body")[0].classList.add("b");
     }
 
     if (
@@ -104,9 +111,7 @@
       $_GET["r"] != null &&
       $_GET["r"] != ""
     ) {
-      document.getElementsByTagName("body")[0].style.width = "50vw !important";
-      document.getElementsByTagName("body")[0].style.paddingLeft =
-        "calc(50vw - 40px) !important";
+      document.getElementByTagName("body")[0].classList.add("r");
     }
 
     if (
