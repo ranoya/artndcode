@@ -1,0 +1,129 @@
+<!doctype html>
+<meta charset="utf-8" />
+<html>
+  <head>
+    <title>Não há curvas</title>
+    <link rel="stylesheet" type="text/css" href="textos.css" />
+    <style>
+      body {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        width: calc(100vw - 80px);
+        height: calc(100dvh - 80px);
+        overflow: hidden;
+        padding: 40px;
+        padding-top: 0;
+        padding-bottom: 80px;
+        margin: 0;
+      }
+
+      .b {
+        width: 50vw !important;
+        align-items: flex-end !important;
+        padding-top: 0 !important;
+        padding-bottom: 80px !important;
+      }
+
+      .t {
+        width: 50vw !important;
+        align-items: flex-start !important;
+        padding-top: 80px !important;
+        padding-bottom: 0 !important;
+      }
+
+      .r {
+        width: 50vw !important;
+        padding-left: calc(50vw - 40px) !important;
+      }
+
+      .b #wrap,
+      .t #wrap,
+      .r #wrap {
+        column-count: 1 !important;
+      }
+    </style>
+  </head>
+  <body onclick="javascript: parent.postMessage('n', '*');">
+    <div id="wrap">
+      <h1>NÃO HÁ CURVAS</h1>
+      <h2></h2>
+
+      <p>
+        Um aspecto importante sobre as obras elaboradas dentro das 3 séries
+        deste conjunto de obras generativas: em nenhum momento qualquer curva é
+        desenhada. O trabalho utiliza linhas, e pontos raramente. Nenhuma
+        superfície é desenhada na tela, e toda organicidade gráfica que se faça
+        presente é resultado de linhas estritamente retas.
+      </p>
+
+      <p>
+        Esta ambiguidade intrínseca nas obras é diretamente responsável pela
+        produção dos Moirés.
+      </p>
+    </div>
+  </body>
+
+  <script>
+    let c = "#000000";
+    let b = "#FFFFFF";
+
+    $_GET = [];
+    (function () {
+      corte = window.location.href.toString().indexOf("?");
+      if (corte > 0) {
+        argumento = window.location.href.toString().substring(corte + 1);
+        argumentos = argumento.split("&");
+        for (arg in argumentos) {
+          let argCorte = argumentos[arg].indexOf("=");
+          $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+            arg
+          ].substring(argCorte + 1);
+        }
+      }
+    })();
+
+    if (
+      typeof $_GET["t"] != "undefined" &&
+      $_GET["t"] != null &&
+      $_GET["t"] != ""
+    ) {
+      document.getElementsByTagName("body")[0].classList.add("t");
+    }
+
+    if (
+      typeof $_GET["b"] != "undefined" &&
+      $_GET["b"] != null &&
+      $_GET["b"] != ""
+    ) {
+      document.getElementsByTagName("body")[0].classList.add("b");
+    }
+
+    if (
+      typeof $_GET["r"] != "undefined" &&
+      $_GET["r"] != null &&
+      $_GET["r"] != ""
+    ) {
+      document.getElementsByTagName("body")[0].classList.add("r");
+    }
+
+    if (
+      typeof $_GET["fcolor"] != "undefined" &&
+      $_GET["fcolor"] != null &&
+      $_GET["fcolor"] != ""
+    ) {
+      c = "#" + $_GET["fcolor"];
+      document.querySelector(":root").style.setProperty("--cor-texto", c);
+    }
+
+    if (
+      typeof $_GET["bgcolor"] != "undefined" &&
+      $_GET["bgcolor"] != null &&
+      $_GET["bgcolor"] != ""
+    ) {
+      b = "#" + $_GET["bgcolor"];
+      document.querySelector(":root").style.setProperty("--cor-bg", b);
+    }
+  </script>
+</html>
