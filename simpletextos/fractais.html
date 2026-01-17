@@ -127,17 +127,5 @@
       b = "#" + $_GET["bgcolor"];
       document.querySelector(":root").style.setProperty("--cor-bg", b);
     }
-
-    ajustaempty = function () {
-      let bloco = document.getElementById("wrap");
-      if (bloco.getBoundingClientRect().height < window.innerHeight - 150) {
-        console.log("true");
-        let diff =
-          (window.innerHeight - 150 - bloco.getBoundingClientRect().height) / 2;
-        document.getElementById("empty").style.height = diff + "px";
-      }
-    };
-
-    ajustaempty();
   </script>
 </html>
