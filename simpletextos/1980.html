@@ -18,6 +18,10 @@
         padding-bottom: 80px;
         margin: 0;
       }
+
+      .catzo {
+        background-color: white !important;
+      }
     </style>
   </head>
   <body onclick="javascript: parent.postMessage('n', '*');">
@@ -90,6 +94,8 @@
       $_GET["b"] != ""
     ) {
       console.log("entrou em b");
+
+      document.getElementByTagName("body")[0].classList.add("catzo");
 
       console.log("achou o body? " + document.getElementsByTagName("body")[0]);
       document.getElementsByTagName("body")[0].style.width = "50vw !important";
