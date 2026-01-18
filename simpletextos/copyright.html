@@ -15,8 +15,7 @@
         color: var(--cor-var);
         text-decoration: underline;
       }
-    </style>
-    <style>
+
       body {
         display: flex;
         align-content: center;
@@ -59,8 +58,6 @@
   </head>
   <body onclick="javascript: parent.postMessage('n', '*');">
     <div id="wrap" style="text-align: right">
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
       <h1 style="text-align: right">© 2026</h1>
       <h2 style="text-align: right">
         ART/ANC/ODE é um livro interativo com obras selecionadas de Guilherme
@@ -75,8 +72,6 @@
           >website do autor</a
         >.
       </h2>
-
-      <br /><br /><br /><br />
     </div>
   </body>
 
@@ -139,6 +134,15 @@
     ) {
       b = "#" + $_GET["bgcolor"];
       document.querySelector(":root").style.setProperty("--cor-bg", b);
+    }
+
+    if (
+      typeof $_GET["varcolor"] != "undefined" &&
+      $_GET["varcolor"] != null &&
+      $_GET["varcolor"] != ""
+    ) {
+      v = "#" + $_GET["varcolor"];
+      document.querySelector(":root").style.setProperty("--cor-bg", v);
     }
   </script>
 </html>
