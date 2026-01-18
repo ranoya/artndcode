@@ -59,7 +59,7 @@ export default ({
       p.strokeWeight(1);
 
       p.background(bgcolor);
-      p.noFfill();
+      p.noFill();
     };
 
     p.draw = function () {
