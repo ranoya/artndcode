@@ -11,14 +11,20 @@ export default ({
       }
 
       if (t == 1) {
-        p.line(x - 4, y - 4, x + 4, y - 4);
-        /*p.line(x - 4, y - 1, x + 4, y - 1);
-        p.line(x - 4, y + 1, x + 4, y + 1);*/
-        p.line(x - 4, y, x + 4, y);
-        p.line(x - 4, y + 4, x + 4, y + 4);
-        p.line(x - 4, y - 4, x - 4, y + 4);
-        p.line(x + 4, y - 4, x + 4, y + 4);
-        p.line(x, y - 4, x, y + 4);
+        p.line(x - 5, y - 4, x - 3, y - 4);
+        p.line(x - 4, y - 5, x - 4, y - 3);
+
+        p.line(x + 5, y - 4, x + 3, y - 4);
+        p.line(x + 4, y - 5, x + 4, y - 3);
+
+        p.line(x - 5, y + 4, x - 3, y + 4);
+        p.line(x - 4, y + 5, x - 4, y + 3);
+
+        p.line(x + 5, y + 4, x + 3, y + 4);
+        p.line(x + 4, y + 5, x + 4, y + 3);
+
+        p.line(x - 1, y, x + 1, y);
+        p.line(x, y - 1, x, y + 1);
       }
 
       if (t == 2) {
