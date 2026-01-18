@@ -41,9 +41,8 @@ export default ({
     };
 
     p.mouseClicked = function () {
-      p.noStroke();
       p.background(bgcolor);
-      p.fill(fcolor);
+      p.stroke(fcolor);
       p.loop();
     };
 
@@ -57,7 +56,7 @@ export default ({
       );
 
       p.strokeWeight(1);
-
+      p.stroke(fcolor);
       p.background(bgcolor);
       p.noFill();
     };
@@ -82,7 +81,7 @@ export default ({
       p.strokeWeight(1);
       p.background(bgcolor);
       p.noFill();
-
+      p.stroke(fcolor);
       p.loop();
     };
   };
