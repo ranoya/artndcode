@@ -11,7 +11,6 @@ export default ({
       }
 
       if (t == 1) {
-        /*
         p.line(x - 5, y - 4, x - 3, y - 4);
         p.line(x - 4, y - 5, x - 4, y - 3);
 
@@ -22,7 +21,7 @@ export default ({
         p.line(x - 4, y + 5, x - 4, y + 3);
 
         p.line(x + 5, y + 4, x + 3, y + 4);
-        p.line(x + 4, y + 5, x + 4, y + 3); */
+        p.line(x + 4, y + 5, x + 4, y + 3);
 
         p.line(x - 5, y, x - 3, y);
         p.line(x - 4, y - 1, x - 4, y + 1);
