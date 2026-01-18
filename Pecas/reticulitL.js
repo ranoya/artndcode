@@ -49,6 +49,7 @@ export default ({
 
     p.setup = function () {
       p.ellipseMode(p.CENTER);
+      p.strokeCap(p.SQUARE);
       p.cnv = p.createCanvas(
         document.getElementById(el).clientWidth,
         document.getElementById(el).clientHeight,
@@ -77,6 +78,7 @@ export default ({
         document.getElementById(el).clientHeight,
       );
 
+      p.strokeCap(p.SQUARE);
       p.strokeWeight(1);
       p.background(bgcolor);
       p.noFill();
