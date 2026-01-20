@@ -54,11 +54,11 @@ export default ({
     p.paintblock = function (xi, yi) {
       let s = Math.random();
       let t = 1;
-      if (s > 0.8) {
-        t = 2;
-      }
       if (s > 0.95) {
         t = 3;
+      }
+      if (s > 0.99) {
+        t = 2;
       }
       for (let y = yi; y < yi + 8 * 16; y = y + 16) {
         for (let x = xi; x < xi + 8 * 16; x = x + 16) {
