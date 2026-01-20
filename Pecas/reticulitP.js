@@ -52,7 +52,7 @@ export default ({
     };
 
     p.paintblock = function (xi, yi) {
-      let s = parseInt(Math.random());
+      let s = Math.random();
       let t = 1;
       if (s > 0.8) {
         t = 2;
