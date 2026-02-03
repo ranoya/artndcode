@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html style="margin: 0; padding: 0; overflow: hidden">
+<html style="margin: 0; padding: 0; overflow: hidden !important">
   <head>
     <meta charset="utf-8" />
     <meta name="pinterest" content="nopin" />
@@ -99,6 +99,7 @@
       background-color: #620384;
       transform-origin: center center;
       transform: rotate(0deg);
+      overflow: visible !important;
     "
   >
     <div
@@ -223,6 +224,7 @@
       ) {
         bgcolor = "#" + $_GET["bgcolor"];
         document.body.style.backgroundColor = bgcolor;
+        document.getElementsByTagName("html").style.backgroundColor = bgcolor;
       }
 
       let sketch1 = function (p) {
