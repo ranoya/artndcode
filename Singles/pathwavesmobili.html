@@ -1,0 +1,576 @@
+<!doctype html>
+
+<html style="margin: 0; padding: 0; overflow: hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Pathwaves Expiritae</title>
+    <meta name="generator" content="artesanal" />
+    <meta
+      name="description"
+      content="Pathwaves Expiritae, arte generativa da série autômata"
+    />
+    <meta name="author" content="Prof. Dr. Guilherme Ranoya" />
+    <meta
+      name="keywords"
+      content="arte generativa, computação criativa, código criativo"
+    />
+    <meta
+      property="og:url"
+      content="https://www.ranoya.com/Art/SerieAutomatos/"
+    />
+    <meta property="og:title" content="Série Autômatos" />
+    <meta
+      property="og:description"
+      content="Organização de composições generativas criadas por Guilherme Ranoya"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:site_name" content="ranoya.com" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image"
+      content="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg"
+    />
+    <link
+      rel="image_src"
+      type="image/jpg"
+      href="https://www.ranoya.com/Assets/coverimages/portfolio600.jpg"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.ranoya.com/Assets/coverimages/portfolio16.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://www.ranoya.com/Assets/coverimages/portfolio57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://www.ranoya.com/Assets/coverimages/portfolio57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="https://www.ranoya.com/Assets/coverimages/portfolio72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="https://www.ranoya.com/Assets/coverimages/portfolio114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="https://www.ranoya.com/Assets/coverimages/portfolio144.png"
+    />
+
+    <link rel="stylesheet" type="text/css" href="../mostra.css" />
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#FFFFFF" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#FFFFFF" />
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF" />
+    <meta name="pinterest" content="nopin" />
+    <meta name="pinterest" content="nohover" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="../singlecolors.js"></script>
+  </head>
+
+  <body
+    style="
+      width: 300vw;
+      height: 300dvh;
+      overflow: hidden;
+      background-color: #620384;
+    "
+  >
+    <div
+      id="wrap"
+      style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 2000px;
+        height: 2000px;
+      "
+    >
+      <div
+        id="bloco"
+        style="
+          position: fixed;
+          top: -50%;
+          left: -30%;
+          width: 2000px;
+          height: 2000px;
+        "
+      >
+        <div
+          id="teste4"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2000px;
+            height: 2000px;
+          "
+        ></div>
+
+        <div
+          id="teste3"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2000px;
+            height: 2000px;
+          "
+        ></div>
+
+        <div
+          id="teste2"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2000px;
+            height: 2000px;
+          "
+        ></div>
+
+        <div
+          id="teste"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2000px;
+            height: 2000px;
+          "
+        ></div>
+      </div>
+    </div>
+
+    <script>
+      let rot = 0;
+      let dx = 0;
+      let dy = 0;
+      let bgcolor = "#620384";
+      let fcolor = "#f14190";
+
+      $_GET = [];
+      (function () {
+        corte = window.location.href.toString().indexOf("?");
+        if (corte > 0) {
+          argumento = window.location.href.toString().substring(corte + 1);
+          argumentos = argumento.split("&");
+          for (arg in argumentos) {
+            let argCorte = argumentos[arg].indexOf("=");
+            $_GET[argumentos[arg].substring(0, argCorte)] = argumentos[
+              arg
+            ].substring(argCorte + 1);
+          }
+        }
+      })();
+
+      if (
+        typeof $_GET["fcolor"] != "undefined" &&
+        $_GET["fcolor"] != null &&
+        $_GET["fcolor"] != ""
+      ) {
+        fcolor = "#" + $_GET["fcolor"];
+      }
+
+      if (
+        typeof $_GET["bgcolor"] != "undefined" &&
+        $_GET["bgcolor"] != null &&
+        $_GET["bgcolor"] != ""
+      ) {
+        bgcolor = "#" + $_GET["bgcolor"];
+        document.body.style.backgroundColor = bgcolor;
+      }
+
+      let sketch1 = function (p) {
+        p.count = 0;
+        p.cor = fcolor;
+
+        p.trilhas = {};
+
+        p.drawitself = function (arr) {
+          arr.p1x = arr.rx + Math.cos(arr.a) * arr.r;
+          arr.p1y = arr.ry + Math.sin(arr.a) * arr.r;
+          arr.p2x = arr.rx + Math.cos(arr.a) * (arr.r + arr.esp);
+          arr.p2y = arr.ry + Math.sin(arr.a) * (arr.r + arr.esp);
+
+          p.line(arr.p1x, arr.p1y, arr.p2x, arr.p2y);
+
+          if (Math.random() * 100 > 98) {
+            arr.newr = p.int(Math.random() * 150);
+
+            arr.deltax =
+              Math.cos(arr.a) * arr.r + Math.cos(arr.a) * (arr.newr + arr.esp);
+            arr.deltay =
+              Math.sin(arr.a) * arr.r + Math.sin(arr.a) * (arr.newr + arr.esp);
+
+            arr.r = arr.newr;
+            arr.rx = arr.rx + arr.deltax;
+            arr.ry = arr.ry + arr.deltay;
+
+            arr.a = arr.a - Math.PI;
+            arr.dir = arr.dir * -1;
+            arr.step = Math.random() * 0.06;
+          }
+
+          arr.a = arr.a + arr.dir * arr.step;
+
+          let defX =
+            (-(arr.p2x - (arr.p2x - arr.p1x) / 2) + p.windowWidth / 2) / 3;
+          let defY =
+            (-(arr.p2y - (arr.p2y - arr.p1y) / 2) + p.windowHeight / 2) / 3;
+
+          document.getElementById("bloco").style.transform =
+            `rotate(${-arr.a}rad) scale(${arr.dir} translate( ${-(arr.p2x - (arr.p2x - arr.p1x) / 2)}px, ${-(arr.p2y - (arr.p2y - arr.p1y) / 2)}px)`;
+
+          document.getElementById("teste").style.transform =
+            `scale(.97) translate(${defX}px, ${defY}px)`;
+
+          document.getElementById("teste3").style.transform =
+            `scale(.92) translate(${defX / 3}px, ${defY / 3}px)`;
+
+          document.getElementById("teste2").style.transform =
+            `scale(.95) translate(${defX / 2}px, ${defY / 2}px)`;
+
+          document.getElementById("teste4").style.transform =
+            `scale(.88) translate(${defX / 4}px, ${defY / 4}px)`;
+        };
+
+        p.setup = function () {
+          p.createCanvas(p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          p.strokeWeight(1);
+          p.noFill();
+          // p.rect(0, 0, p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          for (let k = 0; k < 1; k++) {
+            p.trilhas[k] = {
+              detax: 0,
+              deltay: 0,
+              newr: 0,
+              a: Math.random() * (2 * Math.PI),
+              r: 30 + Math.random() * 100,
+              esp: Math.random() * 50,
+              step: Math.random() * 0.05,
+              rx: 100,
+              ry: 100,
+              dir: 1,
+              p1x: 0,
+              p1y: 0,
+              p2x: 0,
+              p2y: 0,
+            };
+
+            p.trilhas[k].rx =
+              p.windowWidth / 2 + Math.random() * (p.windowWidth / 2);
+            p.trilhas[k].ry =
+              p.windowHeight / 2 + Math.random() * (p.windowHeight / 2);
+          }
+        };
+
+        p.draw = function () {
+          p.count++;
+          if (p.count > 1200) {
+            if (p.cor == fcolor) {
+              p.cor = bgcolor;
+            } else {
+              p.cor = fcolor;
+            }
+
+            p.count = 0;
+          }
+
+          for (let z = 0; z < 1; z++) {
+            p.stroke(p.cor);
+            p.drawitself(p.trilhas[z]);
+          }
+        };
+      };
+
+      let sketch2 = function (p) {
+        p.count = 0;
+        p.cor = fcolor;
+
+        p.trilhas = {};
+
+        p.drawitself = function (arr) {
+          arr.p1x = arr.rx + Math.cos(arr.a) * arr.r;
+          arr.p1y = arr.ry + Math.sin(arr.a) * arr.r;
+          arr.p2x = arr.rx + Math.cos(arr.a) * (arr.r + arr.esp);
+          arr.p2y = arr.ry + Math.sin(arr.a) * (arr.r + arr.esp);
+
+          p.line(arr.p1x, arr.p1y, arr.p2x, arr.p2y);
+
+          if (Math.random() * 100 > 98) {
+            arr.newr = p.int(Math.random() * 150);
+
+            arr.deltax =
+              Math.cos(arr.a) * arr.r + Math.cos(arr.a) * (arr.newr + arr.esp);
+            arr.deltay =
+              Math.sin(arr.a) * arr.r + Math.sin(arr.a) * (arr.newr + arr.esp);
+
+            arr.r = arr.newr;
+            arr.rx = arr.rx + arr.deltax;
+            arr.ry = arr.ry + arr.deltay;
+
+            arr.a = arr.a - Math.PI;
+            arr.dir = arr.dir * -1;
+            arr.step = Math.random() * 0.06;
+          }
+
+          arr.a = arr.a + arr.dir * arr.step;
+        };
+
+        p.setup = function () {
+          p.createCanvas(p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          p.strokeWeight(1);
+          p.noFill();
+          // p.rect(0, 0, p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          for (let k = 0; k < 8; k++) {
+            p.trilhas[k] = {
+              detax: 0,
+              deltay: 0,
+              newr: 0,
+              a: Math.random() * (2 * Math.PI),
+              r: 80 + Math.random() * 180,
+              esp: Math.random() * 150,
+              step: Math.random() * 0.1,
+              rx: 100,
+              ry: 100,
+              dir: 1,
+              p1x: 0,
+              p1y: 0,
+              p2x: 0,
+              p2y: 0,
+            };
+
+            p.trilhas[k].rx =
+              p.windowWidth / 2 + Math.random() * (p.windowWidth / 2);
+            p.trilhas[k].ry =
+              p.windowHeight / 2 + Math.random() * (p.windowHeight / 2);
+          }
+        };
+
+        p.draw = function () {
+          p.count++;
+          if (p.count > 2000) {
+            if (p.cor == fcolor) {
+              p.cor = bgcolor;
+            } else {
+              p.cor = fcolor;
+            }
+
+            p.count = 0;
+          }
+
+          for (let z = 0; z < 8; z++) {
+            p.stroke(p.cor);
+            p.drawitself(p.trilhas[z]);
+          }
+        };
+      };
+
+      let sketch3 = function (p) {
+        p.count = 0;
+        p.cor = fcolor;
+
+        p.trilhas = {};
+
+        p.drawitself = function (arr) {
+          arr.p1x = arr.rx + Math.cos(arr.a) * arr.r;
+          arr.p1y = arr.ry + Math.sin(arr.a) * arr.r;
+          arr.p2x = arr.rx + Math.cos(arr.a) * (arr.r + arr.esp);
+          arr.p2y = arr.ry + Math.sin(arr.a) * (arr.r + arr.esp);
+
+          p.line(arr.p1x, arr.p1y, arr.p2x, arr.p2y);
+
+          if (Math.random() * 100 > 98) {
+            arr.newr = p.int(Math.random() * 150);
+
+            arr.deltax =
+              Math.cos(arr.a) * arr.r + Math.cos(arr.a) * (arr.newr + arr.esp);
+            arr.deltay =
+              Math.sin(arr.a) * arr.r + Math.sin(arr.a) * (arr.newr + arr.esp);
+
+            arr.r = arr.newr;
+            arr.rx = arr.rx + arr.deltax;
+            arr.ry = arr.ry + arr.deltay;
+
+            arr.a = arr.a - Math.PI;
+            arr.dir = arr.dir * -1;
+            arr.step = Math.random() * 0.06;
+          }
+
+          arr.a = arr.a + arr.dir * arr.step;
+        };
+
+        p.setup = function () {
+          p.createCanvas(p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          p.strokeWeight(1);
+          p.noFill();
+          // p.rect(0, 0, p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          for (let k = 0; k < 12; k++) {
+            p.trilhas[k] = {
+              detax: 0,
+              deltay: 0,
+              newr: 0,
+              a: Math.random() * (2 * Math.PI),
+              r: 80 + Math.random() * 180,
+              esp: Math.random() * 150,
+              step: Math.random() * 0.1,
+              rx: 100,
+              ry: 100,
+              dir: 1,
+              p1x: 0,
+              p1y: 0,
+              p2x: 0,
+              p2y: 0,
+            };
+
+            p.trilhas[k].rx =
+              p.windowWidth / 2 + Math.random() * (p.windowWidth / 2);
+            p.trilhas[k].ry =
+              p.windowHeight / 2 + Math.random() * (p.windowHeight / 2);
+          }
+        };
+
+        p.draw = function () {
+          p.count++;
+          if (p.count > 800) {
+            if (p.cor == fcolor) {
+              p.cor = bgcolor;
+            } else {
+              p.cor = fcolor;
+            }
+
+            p.count = 0;
+          }
+
+          for (let z = 0; z < 12; z++) {
+            p.stroke(p.cor);
+            p.drawitself(p.trilhas[z]);
+          }
+        };
+      };
+
+      let sketch4 = function (p) {
+        p.count = 0;
+        p.cor = fcolor;
+
+        p.trilhas = {};
+
+        p.drawitself = function (arr) {
+          arr.p1x = arr.rx + Math.cos(arr.a) * arr.r;
+          arr.p1y = arr.ry + Math.sin(arr.a) * arr.r;
+          arr.p2x = arr.rx + Math.cos(arr.a) * (arr.r + arr.esp);
+          arr.p2y = arr.ry + Math.sin(arr.a) * (arr.r + arr.esp);
+
+          p.line(arr.p1x, arr.p1y, arr.p2x, arr.p2y);
+
+          if (Math.random() * 100 > 98) {
+            arr.newr = p.int(Math.random() * 150);
+
+            arr.deltax =
+              Math.cos(arr.a) * arr.r + Math.cos(arr.a) * (arr.newr + arr.esp);
+            arr.deltay =
+              Math.sin(arr.a) * arr.r + Math.sin(arr.a) * (arr.newr + arr.esp);
+
+            arr.r = arr.newr;
+            arr.rx = arr.rx + arr.deltax;
+            arr.ry = arr.ry + arr.deltay;
+
+            arr.a = arr.a - Math.PI;
+            arr.dir = arr.dir * -1;
+            arr.step = Math.random() * 0.06;
+          }
+
+          arr.a = arr.a + arr.dir * arr.step;
+        };
+
+        p.setup = function () {
+          p.createCanvas(p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          p.strokeWeight(1);
+          p.noFill();
+          // p.rect(0, 0, p.windowWidth * 2.2, p.windowHeight * 2.2);
+
+          for (let k = 0; k < 12; k++) {
+            p.trilhas[k] = {
+              detax: 0,
+              deltay: 0,
+              newr: 0,
+              a: Math.random() * (2 * Math.PI),
+              r: 80 + Math.random() * 180,
+              esp: Math.random() * 150,
+              step: Math.random() * 0.1,
+              rx: 100,
+              ry: 100,
+              dir: 1,
+              p1x: 0,
+              p1y: 0,
+              p2x: 0,
+              p2y: 0,
+            };
+
+            p.trilhas[k].rx =
+              p.windowWidth / 2 + Math.random() * (p.windowWidth / 2);
+            p.trilhas[k].ry =
+              p.windowHeight / 2 + Math.random() * (p.windowHeight / 2);
+          }
+        };
+
+        p.draw = function () {
+          p.count++;
+          if (p.count > 800) {
+            if (p.cor == fcolor) {
+              p.cor = bgcolor;
+            } else {
+              p.cor = fcolor;
+            }
+
+            p.count = 0;
+          }
+
+          for (let z = 0; z < 12; z++) {
+            p.stroke(p.cor);
+            p.drawitself(p.trilhas[z]);
+          }
+        };
+      };
+
+      new p5(sketch1, "teste");
+      new p5(sketch2, "teste2");
+
+      new p5(sketch3, "teste3");
+      new p5(sketch4, "teste4");
+    </script>
+  </body>
+</html>
