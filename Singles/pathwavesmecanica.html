@@ -221,7 +221,8 @@
       ) {
         bgcolor = "#" + $_GET["bgcolor"];
         document.body.style.backgroundColor = bgcolor;
-        document.getElementsByTagName("html").style.backgroundColor = bgcolor;
+        document.getElementsByTagName("html")[0].style.backgroundColor =
+          bgcolor;
       }
 
       let sketch1 = function (p) {
