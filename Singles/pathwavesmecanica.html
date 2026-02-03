@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html style="margin: 0; padding: 0; overflow: hidden !important">
+<html style="overflow: hidden">
   <head>
     <meta charset="utf-8" />
     <meta name="pinterest" content="nopin" />
@@ -79,8 +79,6 @@
       href="https://www.ranoya.com/Assets/coverimages/portfolio144.png"
     />
 
-    <link rel="stylesheet" type="text/css" href="../mostra.css" />
-
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#FFFFFF" />
     <!-- Windows Phone -->
@@ -89,8 +87,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF" />
     <meta name="pinterest" content="nopin" />
     <meta name="pinterest" content="nohover" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-    <script src="../singlecolors.js"></script>
   </head>
   <body
     style="
@@ -99,7 +97,6 @@
       background-color: #620384;
       transform-origin: center center;
       transform: rotate(0deg);
-      overflow: visible !important;
     "
   >
     <div
@@ -229,7 +226,6 @@
 
       let sketch1 = function (p) {
         p.count = 0;
-
         p.cor = fcolor;
 
         p.trilhas = {};
