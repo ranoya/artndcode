@@ -96,6 +96,8 @@ export default ({
 
           // comportamento do bloco
 
+          /*
+
           // desenha linhas diagonais
           for (let tx = this.startx; tx <= this.endx; tx = tx + 4) {
             if (this.cor == this.corLOriginal + 1) {
@@ -122,13 +124,13 @@ export default ({
 
             p.line(tx, this.endy, this.endx, this.starty + (tx - this.startx));
           }
+          
+          */
 
-          /*
-			// pinta o retângulo todo
-				p.fill(this.cor);
-				p.rectMode(p.CORNERS);
-				p.rect(this.startx,this.starty,this.endx, this.endy);
-			*/
+          // pinta o retângulo todo
+          p.fill(this.cor);
+          p.rectMode(p.CORNERS);
+          p.rect(this.startx, this.starty, this.endx, this.endy);
 
           if (this.cor > 110) {
             this.cor = this.corLOriginal;
