@@ -103,15 +103,15 @@ export default ({
               // p.colorMode(p.HSB);
               // p.stroke(this.corH, this.corS, this.corLOriginal);
               p.colorMode(p.RGB);
-              p.stroke(p.cordefundo);
+              p.stroke(fcolor);
             } else if (this.cor >= 106) {
               p.colorMode(p.RGB);
-              p.stroke(p.cordefundo);
+              p.stroke(fcolor);
               // p.blendMode(p.BLEND);
             } else {
               // p.blendMode(p.LIGHTEST);
               p.colorMode(p.RGB);
-              p.stroke(p.cordefundo + "15");
+              p.stroke(fcolor + "15");
             }
 
             p.strokeWeight(1);
