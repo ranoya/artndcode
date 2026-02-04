@@ -100,8 +100,10 @@ export default ({
           for (let tx = this.startx; tx <= this.endx; tx = tx + 4) {
             if (this.cor == this.corLOriginal + 1) {
               // p.blendMode(p.BLEND);
-              p.colorMode(p.HSB);
-              p.stroke(this.corH, this.corS, this.corLOriginal);
+              // p.colorMode(p.HSB);
+              // p.stroke(this.corH, this.corS, this.corLOriginal);
+              p.colorMode(p.RGB);
+              p.stroke(p.cordefundo);
             } else if (this.cor >= 106) {
               p.colorMode(p.RGB);
               p.stroke(p.cordefundo);
