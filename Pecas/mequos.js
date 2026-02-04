@@ -100,18 +100,16 @@ export default ({
           for (let tx = this.startx; tx <= this.endx; tx = tx + 4) {
             if (this.cor == this.corLOriginal + 1) {
               // p.blendMode(p.BLEND);
-              // p.colorMode(p.HSB);
-              // p.stroke(this.corH, this.corS, this.corLOriginal);
-              p.colorMode(p.RGB);
-              p.stroke(fcolor);
+              p.colorMode(p.HSB);
+              p.stroke(this.corH, this.corS, this.corLOriginal);
             } else if (this.cor >= 106) {
               p.colorMode(p.RGB);
-              p.stroke(fcolor);
+              p.stroke(p.cordefundo);
               // p.blendMode(p.BLEND);
             } else {
               // p.blendMode(p.LIGHTEST);
               p.colorMode(p.RGB);
-              p.stroke(fcolor + "15");
+              p.stroke(p.cordefundo + "15");
             }
 
             p.strokeWeight(1);
