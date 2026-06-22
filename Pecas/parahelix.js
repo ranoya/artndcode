@@ -95,7 +95,7 @@ export default ({
       p.push();
       p.translate(0, p.height / 2);
 
-      for (let i = 0; i < width / space; i++) {
+      for (let i = 0; i < p.width / space; i++) {
         if (p.ysb[p.start + i] > p.ys[p.start + i]) {
           p.line(i * space, -5000, i * space, p.ys[p.start + i]);
           p.line(i * space, 5000, i * space, p.ysb[p.start + i]);
