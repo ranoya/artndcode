@@ -7,6 +7,7 @@ export default ({
   fcolor4 = "#000000",
   fcolor5 = "#000000",
   fcolor6 = "#000000",
+  fcolor7 = "#000000",
   bgcolor = "#FFFFFF",
 }) => {
   let sketch = function (p) {
@@ -19,6 +20,7 @@ export default ({
     p.cores[3] = fcolor4;
     p.cores[4] = fcolor5;
     p.cores[5] = fcolor6;
+    p.cores[6] = fcolor7;
 
     p.drawitself = function (arr) {
       arr.p1x = arr.rx + Math.cos(arr.a) * arr.r;
@@ -71,7 +73,7 @@ export default ({
 
       p.strokeWeight(1);
 
-      for (let k = 0; k < 5; k++) {
+      for (let k = 0; k <= 6; k++) {
         p.trilhas[k] = {
           detax: 0,
           deltay: 0,
@@ -96,7 +98,7 @@ export default ({
     };
 
     p.draw = function () {
-      for (let z = 0; z < 5; z++) {
+      for (let z = 0; z <= 6; z++) {
         p.drawitself(p.trilhas[z]);
       }
     };
