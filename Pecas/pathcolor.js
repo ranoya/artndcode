@@ -11,7 +11,6 @@ export default ({
 }) => {
   let sketch = function (p) {
     p.count = 0;
-    p.cor = fcolor;
     p.trilhas = {};
     p.cores = [];
     p.cores[0] = fcolor1;
@@ -61,6 +60,7 @@ export default ({
     p.cnv = "";
 
     p.setup = function () {
+      p.background(bgcolor);
       p.cnv = p.createCanvas(
         document.getElementById(el).clientWidth,
         document.getElementById(el).clientHeight,
@@ -96,17 +96,6 @@ export default ({
     };
 
     p.draw = function () {
-      p.count++;
-      if (p.count > 2000) {
-        if (p.cor == fcolor) {
-          p.cor = bgcolor;
-        } else {
-          p.cor = fcolor;
-        }
-
-        p.count = 0;
-      }
-
       for (let z = 0; z < 5; z++) {
         p.drawitself(p.trilhas[z]);
       }
