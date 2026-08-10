@@ -52,16 +52,21 @@ export default ({
     };
 
     p.pausa = function () {
-      p.noLoop();
+      if (p.count > 300) {
+        p.noLoop();
+      }
     };
 
     p.roda = function () {
-      p.loop();
+      if (p.count > 300) {
+        p.loop();
+      }
     };
 
     p.cnv = "";
 
     p.setup = function () {
+      p.count = 0;
       p.background(bgcolor);
       p.cnv = p.createCanvas(
         document.getElementById(el).clientWidth,
@@ -101,6 +106,7 @@ export default ({
       for (let z = 0; z <= 6; z++) {
         p.drawitself(p.trilhas[z]);
       }
+      p.count++;
     };
 
     p.windowResized = function () {
