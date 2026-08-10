@@ -108,6 +108,7 @@ export default ({
         document.getElementById(el).clientWidth,
         document.getElementById(el).clientHeight,
       );
+      p.setup();
     };
   };
 
